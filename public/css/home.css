@@ -1,0 +1,343 @@
+.hero {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    aspect-ratio: 1920 / 775;
+    background: url("../images/hero_bg.jpg");
+    padding: 3rem;
+    background-size: cover;
+    background-position: center;
+
+    .newest {
+        width: 35vw;
+        aspect-ratio: 804 / 542;
+        background: #fe972a82;
+        backdrop-filter: blur(3px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        padding: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        span {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            button {
+                width: fit-content;
+                height: fit-content;
+                padding: 0.5rem 1rem;
+                border-radius: 3px;
+                border: none;
+                background-color: #fff;
+                color: #222;
+                font-weight: 600;
+                font-family: "DM Sans", Arial, sans-serif;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: #f0f0f0;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
+
+.stats {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    padding: 2rem;
+    background-color: #fff;
+
+    .stat-nums {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        gap: 3rem;
+
+        div {
+            display: flex;
+            width: 10vw;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            gap: -2rem;
+
+            h3 {
+                font-size: 2.5rem;
+                margin: 0.5rem 0;
+            }
+
+            p {
+                font-size: 1.5rem;
+                color: #222;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.gap {
+    width: 100vw;
+    aspect-ratio: 1920 / 104;
+    background: linear-gradient(
+        127deg,
+        rgba(107, 196, 166, 1) 0%,
+        rgba(0, 82, 54, 1) 100%
+    );
+}
+
+.profil-visi-misi {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 4rem 2rem;
+    flex-direction: column;
+
+    .profil {
+        gap: 4rem;
+        display: flex;
+        max-width: 70vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .isi-profil {
+        h3 {
+            font-size: 2rem;
+            color: #222;
+            margin: 0 0 -1rem 0;
+            font-family: "Inknut Antiqua", serif;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #222;
+            text-align: justify;
+        }
+    }
+
+    iframe {
+        border-radius: 5px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        height: 400px;
+        aspect-ratio: 544 / 648;
+    }
+}
+
+.visi-misi {
+    display: flex;
+    gap: 2rem;
+    padding: 0 13%;
+    margin: 4rem 0 2rem 0;
+
+    .visi {
+        width: 18vw;
+
+        h3 {
+            font-size: 2rem;
+            color: #222;
+            margin: 0 0 -1rem 0;
+            font-family: "Inknut Antiqua", serif;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #222;
+        }
+    }
+
+    .misi {
+        width: auto;
+
+        h3 {
+            font-size: 2rem;
+            color: #222;
+            margin: 0 0 -1rem 0;
+            font-family: "Inknut Antiqua", serif;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #222;
+        }
+    }
+}
+
+.cta {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+
+    .content {
+        width: 36%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        background: linear-gradient(
+            127deg,
+            rgba(254, 152, 42, 1) 0%,
+            rgba(188, 79, 7, 1) 100%
+        );
+        color: #fff;
+        gap: 3rem;
+
+        h1 {
+            font-size: 2.2rem;
+            font-family: "DM Sans", Arial, sans-serif;
+
+            b {
+                font-family: "Inknut Antiqua", serif;
+                line-height: 2.2rem;
+            }
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-family: "DM Sans", Arial, sans-serif;
+        }
+
+        button {
+            width: fit-content;
+            height: 2.5rem;
+            padding: 0 1rem;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #222;
+            font-weight: bold;
+            font-size: 1rem;
+            font-family: "DM Sans", Arial, sans-serif;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: #f0f0f0;
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .image {
+        width: 64%;
+        height: auto;
+        background: url("../images/cta_image.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.agenda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+
+    h2 {
+        font-family: "Inknut Antiqua", serif;
+        color: #222;
+        font-size: 2.2rem;
+    }
+
+    .agenda-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        width: 74%;
+        padding: 40px 0;
+
+        .agenda-item {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            .date {
+                height: 120px;
+                aspect-ratio: 1 / 1;
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: #ebebeb;
+                border-radius: 5px;
+
+                b {
+                    display: block;
+                    font-size: 3rem;
+                    color: #6bc4a6;
+                    text-align: center;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                    color: #6bc4a6;
+                    text-align: center;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                padding: 10px 0;
+
+                * {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                h3 {
+                    font-size: 1.3rem;
+                    color: #222;
+                    font-weight: 700;
+                }
+
+                p,
+                span {
+                    font-size: 1rem;
+                    color: #333;
+                    line-height: 1rem;
+                }
+            }
+        }
+    }
+}
