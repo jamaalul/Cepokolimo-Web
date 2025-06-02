@@ -22,7 +22,7 @@
    ];
    $newest = [
       'judul' => 'Cepokolimo Lorem Ipsum Dolor Sit Amet',
-      'deskripsi' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
       'date' => '5 Juli 2024'
    ];
 @endphp
@@ -42,9 +42,10 @@
    <section class="hero">
       <div class="header">
           <div class="newest" data-aos="fade-left" data-aos-duration="1500">
+            <p>{{ $newest['date'] }}</p>
             <h3>{{ $newest['judul'] }}</h3>
-            <p>{{ \Illuminate\Support\Str::limit($newest['deskripsi'], 160, '...') }}</p>
-            <span><p>{{ $newest['date'] }}</p> <button>Baca lebih lanjut</button></span>
+            <p>{{ \Illuminate\Support\Str::limit($newest['body'], 160, '...') }}</p>
+            <button>Baca lebih lanjut</button>
           </div>
       </div>
       <div class="stats">

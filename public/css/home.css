@@ -40,28 +40,22 @@
             margin: 0;
         }
 
-        span {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            align-items: flex-end;
+        button {
+            width: fit-content;
+            height: fit-content;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            border: none;
+            background-color: #fff;
+            color: #222;
+            font-weight: 600;
+            font-family: "DM Sans", Arial, sans-serif;
+            margin-left: auto;
+            transition: all 0.3s ease-in-out;
 
-            button {
-                width: fit-content;
-                height: fit-content;
-                padding: 0.5rem 1rem;
-                border-radius: 3px;
-                border: none;
-                background-color: #fff;
-                color: #222;
-                font-weight: 600;
-                font-family: "DM Sans", Arial, sans-serif;
-                transition: all 0.3s ease-in-out;
-
-                &:hover {
-                    background-color: #f0f0f0;
-                    transform: scale(1.05);
-                }
+            &:hover {
+                background-color: #f0f0f0;
+                transform: scale(1.05);
             }
         }
     }
