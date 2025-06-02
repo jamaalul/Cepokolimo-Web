@@ -1,31 +1,3 @@
-
-@php
-   $agendas = [
-      [
-         'tanggal' => \Carbon\Carbon::create(2024, 7, 10),
-         'judul' => 'HIMTI Cares',
-         'deskripsi' => 'Pengabdian Masyarakat Himpunan Mahasiswa D4 Teknik Informatika Universitas Airlangga di Desa Cepokolimo.',
-         'jam' => '08:00 - 12:00'
-      ],
-      [
-         'tanggal' => \Carbon\Carbon::create(2024, 7, 15),
-         'judul' => 'Lomba Kebersihan Antar RT',
-         'deskripsi' => 'Kompetisi kebersihan lingkungan antar RT dalam rangka memperingati HUT RI.',
-         'jam' => '09:00 - 11:00'
-      ],
-      [
-         'tanggal' => \Carbon\Carbon::create(2024, 7, 20),
-         'judul' => 'Sosialisasi Kesehatan Ibu & Anak',
-         'deskripsi' => 'Penyuluhan kesehatan untuk ibu dan anak bersama Puskesmas Pacet.',
-         'jam' => '13:00 - 15:00'
-      ],
-   ];
-   $newest = [
-      'judul' => 'Cepokolimo Lorem Ipsum Dolor Sit Amet',
-      'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      'date' => '5 Juli 2024'
-   ];
-@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,9 +14,9 @@
    <section class="hero">
       <div class="header">
           <div class="newest" data-aos="fade-left" data-aos-duration="1500">
-            <p>{{ $newest['date'] }}</p>
+            <p>{{ $newest['tanggal']->format('d F Y') }}</p>
             <h3>{{ $newest['judul'] }}</h3>
-            <p>{{ \Illuminate\Support\Str::limit($newest['body'], 160, '...') }}</p>
+            <p>{{ \Illuminate\Support\Str::limit(html_entity_decode(strip_tags($newest['body'])), 160, '...') }}</p>
             <button>Baca lebih lanjut</button>
           </div>
       </div>
@@ -106,13 +78,13 @@
           @foreach ($agendas as $agenda)
             <div class="agenda-item" data-aos="zoom-out-up" data-aos-duration="1000">
                <div class="date">
-                 <b>{{ $agenda['tanggal']->format('d') }}</b>
-                 <p>{{ $agenda['tanggal']->translatedFormat('F') }}</p>
+                 <b>{{ $agenda['waktu']->format('j') }}</b>
+                 <p>{{ $agenda['waktu']->translatedFormat('F') }}</p>
                </div>
                <div class="content">
                  <h3>{{ $agenda['judul'] }}</h3>
                <p>{{ \Illuminate\Support\Str::limit($agenda['deskripsi'], 160, '...') }}</p>
-                 <span class="time">{{ $agenda['jam'] }} WIB</span>
+                 <span class="time">{{ $agenda['waktu']->format('H:i') }} WIB</span>
                </div>
             </div>
             <span style="width: 100%; height: 2px; background-color: #b9b9b9;" data-aos="zoom-out-up" data-aos-duration="1000"></span>
