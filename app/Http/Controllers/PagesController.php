@@ -13,8 +13,8 @@ class PagesController extends Controller
     {
         Carbon::setLocale('id');
 
-        $agendas = Agenda::orderBy('tanggal', 'asc')->get();
-        $newest = News::orderBy('date', 'desc')->first();
+        $agendas = Agenda::whereDate('waktu', '>=', Carbon::today())->orderBy('waktu', 'asc')->get();
+        $newest = News::orderBy('tanggal', 'desc')->first();
 
         return view('home', compact('agendas', 'newest'));
     }

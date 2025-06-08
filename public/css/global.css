@@ -15,3 +15,8 @@ body {
 ::-webkit-scrollbar {
     width: 0px;
 }
+
+::selection {
+    background: #6bc4a68f;
+    color: #fff;
+}

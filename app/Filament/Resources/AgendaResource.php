@@ -36,8 +36,7 @@ class AgendaResource extends Resource
                     ->maxLength(1000),
                 DateTimePicker::make('waktu')
                     ->label('Waktu')
-                    ->required()
-                    ->minDate(now()),
+                    ->required(),
             ]);
     }
 
@@ -50,7 +49,7 @@ class AgendaResource extends Resource
                     ->searchable()
                     ->sortable(),
                 TextColumn::make('waktu')
-                    ->label('waktu')
+                    ->label('Waktu')
                     ->date()
                     ->sortable(),
             ])

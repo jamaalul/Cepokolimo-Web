@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->text('deskripsi');
-            $table->date('waktu');
+            $table->datetime('waktu');
             $table->string('slug')->unique();
             $table->timestamps();
         });

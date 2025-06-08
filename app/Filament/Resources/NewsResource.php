@@ -42,7 +42,22 @@ class NewsResource extends Resource
                 RichEditor::make('body')
                     ->label('Isi Berita')
                     ->columnSpan(2)
-                    ->required(),
+                    ->required()
+                    ->toolbarButtons([
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'h1',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'redo',
+                        'strike',
+                        'underline',
+                        'undo',
+                    ]),
             ]);
     }
 
