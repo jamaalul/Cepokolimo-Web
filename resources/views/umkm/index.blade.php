@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>UMKM | Cepokolimo</title>
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
     <link rel="stylesheet" href="{{ asset('css/umkm/index.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -29,10 +29,10 @@
             @else
                 @foreach ($umkm as $umkm)
                     <div class="product-card" data-aos="fade-up" data-aos-duration="1000">
-                        <img src="{{ $umkm['image'] }}" alt="{{ $umkm['nama'] }}" class="product-image">
+                        <img src="{{ asset('storage/' . $umkm['gambar'][0]) }}" alt="{{ $umkm['nama'] }}" class="product-image">
                         <div class="product-content">
                             <h3 class="product-title">{{ $umkm['nama'] }}<br><b class="product-owner">{{ $umkm['owner'] }}</b></h3>
-                            <p class="product-description">{{ \Illuminate\Support\Str::limit(html_entity_decode(strip_tags($umkm['deskripsi'])), 244, '...') }}</p>
+                            <p class="product-description">{{ \Illuminate\Support\Str::limit(html_entity_decode(strip_tags($umkm['deskripsi'])), 200, '...') }}</p>
                             <button class="btn-more" onclick="window.location.href = '/umkm/{{ $umkm['id'] }}'">Selengkapnya</button>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     <nav data-aos="fade-down" data-aos-duration="1000">
-        <img src="assets/logo.png" alt="Logo" onclick="window.location.href='/'">
+        <img src="{{ asset('assets/logo.png') }}" alt="Logo" onclick="window.location.href='/'">
         
         <!-- Desktop Navigation Links -->
         <div class="nav-links">

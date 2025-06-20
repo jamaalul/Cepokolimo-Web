@@ -38,13 +38,13 @@
             <p>Tidak ada berita yang tersedia.</p>
             </div>
         @else
-            @foreach ($news as $item)
+            @foreach ($news->skip(1) as $item)
             <div class="news-item" onclick="window.location.href = '/berita/{{ $item['slug'] }}'" data-aos="fade-up" data-aos-duration="1000">
                 <div class="image" style="background-image: url('{{ asset('storage/' . $item->gambar) }}')"></div>
                 <div class="content">
-                <p class="date">{{ $item['tanggal']->translatedFormat('j F Y') }}</p>
-                <h3 class="title">{{ $item['judul'] }}</h3>
-                <p class="excerpt">{{ \Illuminate\Support\Str::limit(html_entity_decode(strip_tags($item['body'])), 100, '...') }}</p>
+                    <p class="date">{{ $item['tanggal']->translatedFormat('j F Y') }}</p>
+                    <h3 class="title">{{ $item['judul'] }}</h3>
+                    <p class="excerpt">{{ \Illuminate\Support\Str::limit(html_entity_decode(strip_tags($item['body'])), 100, '...') }}</p>
                 </div>
             </div>    
             @endforeach

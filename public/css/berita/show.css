@@ -1,0 +1,112 @@
+.judul {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7rem 5rem 1rem 5rem;
+
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #222;
+
+        b {
+            font-weight: 500;
+            color: #fe982a;
+        }
+    }
+
+    @media (max-width: 900px) {
+        padding: 5rem 2rem 1rem 2rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding: 3rem 1rem 1rem 1rem;
+
+        h1 {
+            font-size: 1.3rem;
+        }
+        p {
+            font-size: 0.95rem;
+        }
+    }
+}
+
+.image {
+    width: 100vw;
+    height: fit-content;
+    padding: 2rem;
+
+    .news-image {
+        width: 100%;
+        aspect-ratio: 4 / 2;
+        background-size: cover !important;
+        background-position: center center;
+        border-radius: 5px;
+        display: block;
+    }
+
+    @media (max-width: 900px) {
+        padding: 1.5rem;
+
+        .news-image {
+            aspect-ratio: 16 / 9;
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding: 1rem 0.5rem;
+
+        .news-image {
+            aspect-ratio: 1 / 1;
+        }
+    }
+}
+
+.body {
+    width: 100%;
+    height: fit-content;
+    padding: 5vw 10vw;
+
+    .news-body {
+        width: 100%;
+        height: fit-content;
+        min-height: 200px;
+        border-radius: 5px;
+
+        * {
+            text-align: justify;
+        }
+    }
+
+    @media (max-width: 900px) {
+        padding: 4vw 5vw;
+
+        .news-body {
+            min-height: 150px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding: 2vw 2vw;
+
+        .news-body {
+            min-height: 100px;
+        }
+    }
+}

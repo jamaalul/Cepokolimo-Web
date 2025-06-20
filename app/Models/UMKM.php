@@ -11,7 +11,8 @@ class UMKM extends Model
     protected $fillable = [
         'nama',
         'owner',
-        'deskripsi'
+        'deskripsi',
+        'gambar'
     ];
 
     protected static function booted()
@@ -29,9 +30,17 @@ class UMKM extends Model
             if ($umkm->isDirty('gambar')) {
                 $oldImage = $umkm->getOriginal('gambar');
                 if ($oldImage) {
-                    Storage::disk('public')->delete($oldImage);
+                    $i = 0;
+                    foreach ($oldImage as $image) {
+                        Storage::disk('public')->delete($image[$i]);
+                        $i += 1;
+                    }
                 }
             }
         });
     }
+
+    protected $casts = [
+        'gambar' => 'array',
+    ];
 }

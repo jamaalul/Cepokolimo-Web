@@ -148,7 +148,8 @@
         }
 
         .product-image {
-            height: 200px;
+            height: auto;
+            max-height: 300px;
             width: 266px;
             object-fit: cover;
             flex-shrink: 0;

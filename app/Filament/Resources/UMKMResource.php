@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\FileUpload;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -34,6 +35,14 @@ class UMKMResource extends Resource
                     ->label('Pemilik')
                     ->required()
                     ->maxLength(48),
+                FileUpload::make('gambar (Max 9 Gambar)')
+                    ->label('Gambar')
+                    ->image()
+                    ->required()
+                    ->disk('public')
+                    ->directory('umkm-images')
+                    ->multiple()
+                    ->maxParallelUploads(9),
                 RichEditor::make('deskripsi')
                     ->label('Deskripsi')
                     ->columnSpan(2)
@@ -66,7 +75,7 @@ class UMKMResource extends Resource
                     ->sortable(),
                 TextColumn::make('owner')
                     ->label('Pemilik')
-                    ->date()
+                    ->searchable()
                     ->sortable(),
             ])
             ->filters([

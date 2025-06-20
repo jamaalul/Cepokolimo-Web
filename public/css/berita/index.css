@@ -23,10 +23,11 @@
                 rgba(0, 0, 0, 0.7) 10%,
                 rgba(0, 0, 0, 0) 100%
             );
+            align-items: center;
 
             .newest-content {
                 height: 40%;
-                aspect-ratio: 654 / 280 !important;
+                width: clamp(300px, 50vw, 960px);
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -87,7 +88,8 @@
     .newest .newest-item .layer {
         flex-direction: column;
         align-items: flex-start;
-        padding: 4vw;
+        justify-content: center;
+        padding: 5vw;
     }
     .newest .newest-item .layer .newest-content {
         width: 100%;
@@ -113,7 +115,8 @@
         border-radius: 0px;
     }
     .newest .newest-item .layer {
-        padding: 4vw 6vw;
+        padding: 6vw;
+        justify-content: flex-start;
     }
     .newest .newest-item .layer .newest-content {
         gap: 6px;

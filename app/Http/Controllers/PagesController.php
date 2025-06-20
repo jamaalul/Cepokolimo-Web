@@ -31,8 +31,8 @@ class PagesController extends Controller
 
     public function newsShow($slug)
     {
-        $news = News::where('slug', $slug)->get();
-        return $news;
+        $news = News::where('slug', $slug)->first();
+        return view('berita.show', compact('news'));
     }
 
     public function umkmIndex()
