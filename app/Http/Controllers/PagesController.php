@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Agenda;
 use App\Models\News;
+use App\Models\UMKM;
 use Carbon\Carbon;
 
 class PagesController extends Controller
@@ -19,7 +20,7 @@ class PagesController extends Controller
         return view('home', compact('agendas', 'newest'));
     }
 
-    public function index()
+    public function newsIndex()
     {
         Carbon::setLocale('id');
 
@@ -28,9 +29,39 @@ class PagesController extends Controller
         return view('berita.index', compact('news'));
     }
 
-    public function show($slug)
+    public function newsShow($slug)
     {
         $news = News::where('slug', $slug)->get();
         return $news;
     }
+
+    public function umkmIndex()
+    {
+        $umkm = UMKM::orderBy('nama', 'asc')->get();
+        // $umkm = collect([
+        //     [
+        //     'id' => 1,
+        //     'nama' => 'UMKM Sari Rasa',
+        //     'owner' => 'Ibu Sari',
+        //     'deskripsi' => 'Menjual aneka kue tradisional dan jajanan pasar.',
+        //     'image' => 'sari_rasa.jpg',
+        //     ],
+        //     [
+        //     'id' => 2,
+        //     'nama' => 'UMKM Batik Limo',
+        //     'owner' => 'Pak Budi',
+        //     'deskripsi' => 'Produsen batik tulis khas Cepokolimo.',
+        //     'image' => 'batik_limo.jpg',
+        //     ],
+        //     [
+        //     'id' => 3,
+        //     'nama' => 'UMKM Kopi Cepoko',
+        //     'owner' => 'Bu Rina',
+        //     'deskripsi' => 'Kopi robusta asli hasil petani lokal.',
+        //     'image' => 'kopi_cepoko.jpg',
+        //     ],
+        // ]);
+
+        return view('umkm.index', compact('umkm'));
+    }    
 }

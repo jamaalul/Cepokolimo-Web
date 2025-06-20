@@ -12,6 +12,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -30,7 +31,7 @@ class UMKMResource extends Resource
                     ->required()
                     ->maxLength(48),
                 TextInput::make('owner')
-                    ->label('Owner')
+                    ->label('Pemilik')
                     ->required()
                     ->maxLength(48),
                 RichEditor::make('deskripsi')
@@ -59,7 +60,14 @@ class UMKMResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('nama')
+                    ->label('Nama')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('owner')
+                    ->label('Pemilik')
+                    ->date()
+                    ->sortable(),
             ])
             ->filters([
                 //

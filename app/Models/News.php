@@ -25,17 +25,6 @@ class News extends Model
 
         static::deleting(function ($news) {
             Storage::disk('public')->delete($news['gambar']);
-
-            $content = $news->body ?? null;
-            if ($content) {
-                preg_match_all('/src="[^"]*\/storage\/([^"]+)"/', $content, $matches);
-
-                if (isset($matches[1])) {
-                    foreach ($matches[1] as $relativePath) {
-                        Storage::disk('public')->delete($relativePath);
-                    }
-                }
-            }
         });
 
         static::updating(function ($news) {
@@ -44,17 +33,6 @@ class News extends Model
                 $oldImage = $news->getOriginal('gambar');
                 if ($oldImage) {
                     Storage::disk('public')->delete($oldImage);
-                }
-            }
-
-            $content = $news->body ?? null;
-            if ($content) {
-                preg_match_all('/src="[^"]*\/storage\/([^"]+)"/', $content, $matches);
-
-                if (isset($matches[1])) {
-                    foreach ($matches[1] as $relativePath) {
-                        Storage::disk('public')->delete($relativePath);
-                    }
                 }
             }
         });
