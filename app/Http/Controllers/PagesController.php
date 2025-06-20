@@ -38,30 +38,11 @@ class PagesController extends Controller
     public function umkmIndex()
     {
         $umkm = UMKM::orderBy('nama', 'asc')->get();
-        // $umkm = collect([
-        //     [
-        //     'id' => 1,
-        //     'nama' => 'UMKM Sari Rasa',
-        //     'owner' => 'Ibu Sari',
-        //     'deskripsi' => 'Menjual aneka kue tradisional dan jajanan pasar.',
-        //     'image' => 'sari_rasa.jpg',
-        //     ],
-        //     [
-        //     'id' => 2,
-        //     'nama' => 'UMKM Batik Limo',
-        //     'owner' => 'Pak Budi',
-        //     'deskripsi' => 'Produsen batik tulis khas Cepokolimo.',
-        //     'image' => 'batik_limo.jpg',
-        //     ],
-        //     [
-        //     'id' => 3,
-        //     'nama' => 'UMKM Kopi Cepoko',
-        //     'owner' => 'Bu Rina',
-        //     'deskripsi' => 'Kopi robusta asli hasil petani lokal.',
-        //     'image' => 'kopi_cepoko.jpg',
-        //     ],
-        // ]);
 
         return view('umkm.index', compact('umkm'));
     }    
+
+    public function kepengurusan() {
+        return view('kepengurusan');
+    }
 }

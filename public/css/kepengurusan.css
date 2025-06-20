@@ -1,0 +1,55 @@
+.hero {
+    padding: 5vh 2rem 2rem 2rem;
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .layer {
+        height: 210%;
+        position: absolute;
+        margin-top: -20%;
+
+        @media (max-width: 768px) {
+            height: 150%;
+        }
+
+        @media (max-width: 400px) {
+            height: 150%;
+        }
+    }
+
+    h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: #b9b9b9;
+        margin: 0;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .spc {
+        font-family: "Inknut Antiqua", serif;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        color: #005236;
+        line-height: 3rem;
+    }
+}
+
+.kepengurusan {
+    width: 100%;
+    height: fit-content;
+    padding: 15vw 3vw;
+    background-color: #eee;
+
+    img {
+        width: 100%;
+    }
+}
+
+.transition {
+    width: 100vw;
+    aspect-ratio: 4 / 1;
+}
