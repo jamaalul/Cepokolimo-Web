@@ -108,9 +108,7 @@
                 <span style="width: 100%; height: 2px; background-color: #b9b9b9;" data-aos="zoom-out-up" data-aos-duration="1000"></span>
             @endforeach
          @else
-            <div class="agenda-item no-agenda" data-aos="zoom-out-up" data-aos-duration="1000">
-               <p>Tidak ada agenda mendatang saat ini.</p>
-            </div>
+            <script>document.querySelector(".agenda").style.display = "none"</script>
          @endif
       </div>
    </section>

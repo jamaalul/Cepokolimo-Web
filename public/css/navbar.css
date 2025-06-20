@@ -168,3 +168,8 @@ nav {
         }
     }
 }
+
+.active {
+    color: #222 !important;
+    cursor: default;
+}

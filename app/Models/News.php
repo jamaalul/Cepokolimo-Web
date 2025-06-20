@@ -19,7 +19,7 @@ class News extends Model
     protected static function booted()
     {
         static::creating(function ($news) {
-            $news->slug = Str::slug($news->judul);
+            $news->slug = Str::slug($news->judul . '-' . Str::random(6));
             $news->tanggal = now();
         });
 

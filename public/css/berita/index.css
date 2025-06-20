@@ -1,0 +1,184 @@
+.newest {
+    width: 100vw;
+    height: fit-content;
+    padding: 8rem 2rem 2rem 2rem;
+
+    .newest-item {
+        width: 100%;
+        aspect-ratio: 1820 / 700;
+        background-color: #bbb;
+        border-radius: 10px;
+        background-size: cover;
+        overflow: hidden;
+
+        .layer {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 3vw;
+            background: linear-gradient(
+                131deg,
+                rgba(0, 0, 0, 0.7) 10%,
+                rgba(0, 0, 0, 0) 100%
+            );
+
+            .newest-content {
+                height: 40%;
+                aspect-ratio: 654 / 280 !important;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+
+                * {
+                    margin: 0;
+                    padding: 0;
+                    color: #fff;
+                }
+
+                p {
+                    font-size: clamp(1rem, 1.2vw, 1.5rem);
+                }
+
+                h1 {
+                    font-size: clamp(2rem, 3vw, 3rem);
+                    line-height: clamp(2rem, 3vw, 3rem);
+                }
+
+                button {
+                    background-color: #fff;
+                    color: #222;
+                    font-size: clamp(0.7rem, 1.2vw, 1.5rem);
+                    padding: 0.3rem 0.8rem;
+                    border: none;
+                    border-radius: 10px;
+                    width: fit-content;
+                    font-weight: 500;
+                    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .newest .newest-item {
+        aspect-ratio: 16 / 7;
+    }
+    .newest .newest-item .layer {
+        padding: 4vw;
+    }
+    .newest .newest-item .layer .newest-content {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .newest {
+        padding: 2rem 1rem 1rem 1rem;
+    }
+    .newest .newest-item {
+        aspect-ratio: 16 / 9;
+    }
+    .newest .newest-item .layer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 4vw;
+    }
+    .newest .newest-item .layer .newest-content {
+        width: 100%;
+        aspect-ratio: auto !important;
+        gap: 10px;
+    }
+    .newest .newest-item .layer .newest-content h1 {
+        font-size: clamp(1.3rem, 5vw, 2rem);
+        line-height: clamp(1.3rem, 5vw, 2rem);
+    }
+    .newest .newest-item .layer .newest-content p,
+    .newest .newest-item .layer .newest-content button {
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .newest {
+        padding: 2rem 0rem 1rem 0rem;
+    }
+    .newest .newest-item {
+        aspect-ratio: 4 / 5;
+        border-radius: 0px;
+    }
+    .newest .newest-item .layer {
+        padding: 4vw 6vw;
+    }
+    .newest .newest-item .layer .newest-content {
+        gap: 6px;
+    }
+    .newest .newest-item .layer .newest-content h1 {
+        font-size: 1.1rem;
+        line-height: 1.2rem;
+    }
+    .newest .newest-item .layer .newest-content p,
+    .newest .newest-item .layer .newest-content button {
+        font-size: 0.95rem;
+    }
+}
+
+.news {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 8rem 2rem 50vh 2rem;
+
+    .news-item {
+        overflow: hidden;
+        width: 320px;
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-basis: 320px;
+
+        .image {
+            width: 100%;
+            aspect-ratio: 8 / 5;
+            max-height: 300px;
+            background-color: #bbb;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+        }
+
+        .content {
+            padding: 18px 0 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .date {
+                font-size: 0.95em;
+                color: #888;
+                margin-bottom: 4px;
+            }
+
+            .title {
+                font-size: 1.15em;
+                font-weight: 600;
+                margin: 0 0 6px 0;
+                color: #222;
+            }
+
+            .excerpt {
+                font-size: 1em;
+                color: #444;
+                margin: 0;
+            }
+        }
+    }
+}

@@ -2,26 +2,22 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\NewsResource\Pages;
-use App\Filament\Resources\NewsResource\RelationManagers;
-use App\Models\News;
-use Dom\Text;
+use App\Filament\Resources\UMKMResource\Pages;
+use App\Filament\Resources\UMKMResource\RelationManagers;
+use App\Models\UMKM;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class NewsResource extends Resource
+class UMKMResource extends Resource
 {
-    protected static ?string $model = News::class;
+    protected static ?string $model = UMKM::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -29,19 +25,16 @@ class NewsResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('judul')
-                    ->label('Judul')
+                TextInput::make('nama')
+                    ->label('Nama')
                     ->required()
-                    ->maxLength(128),
-                FileUpload::make('gambar')
-                    ->label('Gambar (Max 1MB)')
-                    ->image()
+                    ->maxLength(48),
+                TextInput::make('owner')
+                    ->label('Owner')
                     ->required()
-                    ->maxSize(1024) // 1MB
-                    ->disk('public')
-                    ->directory('news-images'),
-                RichEditor::make('body')
-                    ->label('Isi Berita')
+                    ->maxLength(48),
+                RichEditor::make('deskripsi')
+                    ->label('Deskripsi')
                     ->columnSpan(2)
                     ->required()
                     ->toolbarButtons([
@@ -66,14 +59,7 @@ class NewsResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('judul')
-                    ->label('Judul')
-                    ->searchable()
-                    ->sortable(),
-                TextColumn::make('tanggal')
-                    ->label('Tanggal')
-                    ->date()
-                    ->sortable(),
+                //
             ])
             ->filters([
                 //
@@ -98,28 +84,28 @@ class NewsResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListNews::route('/'),
-            'create' => Pages\CreateNews::route('/create'),
-            'edit' => Pages\EditNews::route('/{record}/edit'),
+            'index' => Pages\ListUMKMS::route('/'),
+            'create' => Pages\CreateUMKM::route('/create'),
+            'edit' => Pages\EditUMKM::route('/{record}/edit'),
         ];
     }
 
     // Nama di sidebar/navigation
-    protected static ?string $navigationLabel = 'Berita';
+    protected static ?string $navigationLabel = 'UMKM';
 
     // Judul di halaman index
-    protected static ?string $label = 'Berita';
+    protected static ?string $label = 'UMKM';
 
     // Judul di halaman index (jamak)
-    protected static ?string $pluralLabel = 'Daftar Berita';
+    protected static ?string $pluralLabel = 'Daftar UMKM';
 
     public static function getPluralLabel(): string
     {
-        return 'Daftar Berita';
+        return 'Daftar UMKM';
     }
 
     public static function getLabel(): string
     {
-        return 'Berita';
+        return 'UMKM';
     }
 }

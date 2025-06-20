@@ -1,14 +1,14 @@
 <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
-    <nav>
+    <nav data-aos="fade-down" data-aos-duration="1000">
         <img src="assets/logo.png" alt="Logo" onclick="window.location.href='/'">
         
         <!-- Desktop Navigation Links -->
         <div class="nav-links">
-            <a href="/berita">Berita</a>
-            <a href="/umkm">UMKM</a>
-            <a href="/kepengurusan">Kepengurusan</a>
-            <a href="/lembaga">Lembaga Desa</a>
-            <a href="/kesenian">Kesenian</a>
+            <a class="{{ Request::is('berita') ? 'active' : '' }}" href="/berita">Berita</a>
+            <a class="{{ Request::is('umkm') ? 'active' : '' }}" href="/umkm">UMKM</a>
+            <a class="{{ Request::is('kepengurusan') ? 'active' : '' }}" href="/kepengurusan">Kepengurusan</a>
+            <a class="{{ Request::is('lembaga') ? 'active' : '' }}" href="/lembaga">Lembaga Desa</a>
+            <a class="{{ Request::is('kesenian') ? 'active' : '' }}" href="/kesenian">Kesenian</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -21,11 +21,11 @@
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu">
-        <a href="/berita" onclick="closeMobileMenu()">Berita</a>
-        <a href="/umkm" onclick="closeMobileMenu()">UMKM</a>
-        <a href="/kepengurusan" onclick="closeMobileMenu()">Kepengurusan</a>
-        <a href="/lembaga" onclick="closeMobileMenu()">Lembaga Desa</a>
-        <a href="/kesenian" onclick="closeMobileMenu()">Kesenian</a>
+        <a class="{{ Request::is('berita') ? 'active' : '' }}" href="/berita" onclick="closeMobileMenu()">Berita</a>
+        <a class="{{ Request::is('umkm') ? 'active' : '' }}" href="/umkm" onclick="closeMobileMenu()">UMKM</a>
+        <a class="{{ Request::is('kepengurusan') ? 'active' : '' }}" href="/kepengurusan" onclick="closeMobileMenu()">Kepengurusan</a>
+        <a class="{{ Request::is('lembaga') ? 'active' : '' }}" href="/lembaga" onclick="closeMobileMenu()">Lembaga Desa</a>
+        <a class="{{ Request::is('kesenian') ? 'active' : '' }}" href="/kesenian" onclick="closeMobileMenu()">Kesenian</a>
     </div>
 
     <script>

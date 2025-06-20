@@ -18,4 +18,19 @@ class PagesController extends Controller
 
         return view('home', compact('agendas', 'newest'));
     }
+
+    public function index()
+    {
+        Carbon::setLocale('id');
+
+        $news = News::orderBy('tanggal', 'desc')->get();
+        
+        return view('berita.index', compact('news'));
+    }
+
+    public function show($slug)
+    {
+        $news = News::where('slug', $slug)->get();
+        return $news;
+    }
 }
