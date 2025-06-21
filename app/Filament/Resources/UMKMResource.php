@@ -35,7 +35,11 @@ class UMKMResource extends Resource
                     ->label('Pemilik')
                     ->required()
                     ->maxLength(48),
-                FileUpload::make('gambar (Max 9 Gambar)')
+                TextInput::make('kontak')
+                    ->label('Kontak')
+                    ->required()
+                    ->maxLength(48),
+                FileUpload::make('gambar')
                     ->label('Gambar')
                     ->image()
                     ->required()

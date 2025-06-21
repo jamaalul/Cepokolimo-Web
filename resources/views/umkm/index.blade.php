@@ -33,7 +33,7 @@
                         <div class="product-content">
                             <h3 class="product-title">{{ $umkm['nama'] }}<br><b class="product-owner">{{ $umkm['owner'] }}</b></h3>
                             <p class="product-description">{{ \Illuminate\Support\Str::limit(html_entity_decode(strip_tags($umkm['deskripsi'])), 200, '...') }}</p>
-                            <button class="btn-more" onclick="window.location.href = '/umkm/{{ $umkm['id'] }}'">Selengkapnya</button>
+                            <button class="btn-more" onclick="window.location.href = '/umkm/{{ $umkm['slug'] }}'">Selengkapnya</button>
                         </div>
                     </div>
                 @endforeach

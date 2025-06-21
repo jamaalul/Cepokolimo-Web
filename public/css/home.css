@@ -17,7 +17,7 @@
     background-position: center;
 
     .newest {
-        width: 35vw;
+        width: 40vw;
         aspect-ratio: 804 / 542;
         background: #fe972a82;
         backdrop-filter: blur(3px);
@@ -29,7 +29,7 @@
         justify-content: space-between;
 
         h3 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #fff;
             margin: 0;
         }

@@ -17,7 +17,6 @@
             <div class="newest" data-aos="fade-left" data-aos-duration="1500">
                <p>{{ $newest['tanggal']->translatedFormat('j F Y') }}</p>
                <h3>{{ $newest['judul'] }}</h3>
-               <p>{{ \Illuminate\Support\Str::limit(html_entity_decode(strip_tags($newest['body'])), 160, '...') }}</p>
                <button onclick="window.location.href='berita/{{ $newest['slug'] }}'">Baca lebih lanjut</button>
             </div>
          @else

@@ -12,13 +12,14 @@ class UMKM extends Model
         'nama',
         'owner',
         'deskripsi',
-        'gambar'
+        'gambar',
+        'kontak'
     ];
 
     protected static function booted()
     {
         static::creating(function ($umkm) {
-            $umkm->slug = Str::slug($umkm->nama . '-' . Str::random(6));
+            $umkm->slug = Str::slug($umkm->nama);
         });
 
         static::deleting(function ($umkm) {

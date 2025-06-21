@@ -42,6 +42,12 @@ class PagesController extends Controller
         return view('umkm.index', compact('umkm'));
     }    
 
+    public function umkmShow($slug)
+    {
+        $umkm = UMKM::where('slug', $slug)->first();
+        return view('umkm.show', compact('umkm'));
+    }
+
     public function kepengurusan() {
         return view('kepengurusan');
     }
