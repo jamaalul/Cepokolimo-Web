@@ -37,7 +37,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-5. **Configure your `.env`**
+5. **Configure your `.env` (Optional)**
 
 Open `.env` and set up your database configuration:
 
