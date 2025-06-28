@@ -1,8 +1,3 @@
-Here's a `README.md` template for your Laravel web application that includes clear steps from cloning the repo to running it with `php artisan serve`:
-
----
-
-````markdown
 # Laravel Web Application
 
 This is a Laravel-based web application. Follow the steps below to set it up and run on your local machine.
@@ -21,8 +16,8 @@ This is a Laravel-based web application. Follow the steps below to set it up and
 ```bash
 git clone https://github.com/your-username/your-laravel-app.git
 cd your-laravel-app
+
 ```
-````
 
 2. **Install PHP dependencies**
 
@@ -93,7 +88,4 @@ This project is open-source and available under the [MIT license](LICENSE).
 
 ```
 
----
-
-Let me know if you want it tailored for Laravel Sail, Docker, or deployed to a specific platform (e.g., Vercel, Heroku, etc.).
 ```
