@@ -15,7 +15,7 @@ This is a Laravel-based web application. Follow the steps below to set it up and
 
 ```bash
 git clone https://github.com/jamaalul/Cepokolimo-Web.git
-cd your-laravel-app
+cd Cepokolimo-Web
 
 ```
 
