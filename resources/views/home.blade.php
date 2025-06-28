@@ -20,9 +20,9 @@
                <button onclick="window.location.href='berita/{{ $newest['slug'] }}'">Baca lebih lanjut</button>
             </div>
          @else
-            <div class="newest no-news" data-aos="fade-left" data-aos-duration="1500">
+            {{-- <div class="newest no-news" data-aos="fade-left" data-aos-duration="1500">
                <p>Tidak ada berita terbaru saat ini.</p>
-            </div>
+            </div> --}}
          @endif
       </div>
       <div class="stats">

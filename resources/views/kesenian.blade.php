@@ -16,9 +16,9 @@
         <h1 data-aos="zoom-out-down" data-aos-duration="1000">Suro Nogo</h1>
         <div class="images">
             <div class="img" style="background-image: url('{{ asset('images/kesenian/1.png') }}')" data-aos="fade-up" data-aos-duration="1000"></div>
-            <div class="img" style="background-image: url('{{ asset('images/kesenian/2.png') }}')" data-aos="fade-up" data-aos-duration="1500"></div>
-            <div class="img" style="background-image: url('{{ asset('images/kesenian/3.png') }}')" data-aos="fade-up" data-aos-duration="2000"></div>
-            <div class="img" style="background-image: url('{{ asset('images/kesenian/4.png') }}')" data-aos="fade-up" data-aos-duration="2500"></div>
+            <div class="img" style="background-image: url('{{ asset('images/kesenian/2.png') }}')" data-aos="fade-up" data-aos-duration="1000"></div>
+            <div class="img" style="background-image: url('{{ asset('images/kesenian/3.png') }}')" data-aos="fade-up" data-aos-duration="1000"></div>
+            <div class="img" style="background-image: url('{{ asset('images/kesenian/4.png') }}')" data-aos="fade-up" data-aos-duration="1000"></div>
         </div>
     </section>
     <section class="content">

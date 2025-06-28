@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('a_p_b_d_s', function (Blueprint $table) {
             $table->id();
             $table->string('tahun');
-            $table->integer('pendapatan');
-            $table->integer('belanja');
+            $table->string('pendapatan');
+            $table->string('belanja');
             $table->timestamps();
         });
     }

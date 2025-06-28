@@ -4,12 +4,17 @@
         
         <!-- Desktop Navigation Links -->
         <div class="nav-links">
-            <a class="{{ Request::is('berita') ? 'active' : '' }}" href="/berita">Berita</a>
-            <a class="{{ Request::is('umkm') ? 'active' : '' }}" href="/umkm">UMKM</a>
-            <a class="{{ Request::is('kepengurusan') ? 'active' : '' }}" href="/kepengurusan">Kepengurusan</a>
-            <a class="{{ Request::is('apbd') ? 'active' : '' }}" href="/apbd">APBD</a>
-            <a class="{{ Request::is('lembaga') ? 'active' : '' }}" href="/lembaga">Lembaga Desa</a>
-            <a class="{{ Request::is('kesenian') ? 'active' : '' }}" href="/kesenian">Kesenian</a>
+            <a class="{{ Request::is('berita') ? 'active' : '' }} def" href="/berita">Berita</a>
+            <a class="{{ Request::is('umkm') ? 'active' : '' }} def" href="/umkm">UMKM</a>
+            <a class="{{ Request::is('kepengurusan') ? 'active' : '' }} def" href="/kepengurusan">Kepengurusan</a>
+            <a class="{{ Request::is('apbd') ? 'active' : '' }} def" href="/apbd">APBD</a>
+            <a class="def" onclick="test()">Lembaga Desa</a>
+            <a class="{{ Request::is('kesenian') ? 'active' : '' }} def" href="/kesenian">Kesenian</a>
+            <a class="cus" onclick="test()" style="color: #777777">&lt; Kembali</a>
+            <a class="{{ Request::is('lembaga/bpd') ? 'active' : '' }} cus" href="/lembaga/bpd">BPD</a>
+            <a class="{{ Request::is('lembaga/pkk') ? 'active' : '' }} cus" href="/lembaga/pkk">PKK</a>
+            <a class="{{ Request::is('lembaga/karang-taruna') ? 'active' : '' }} cus" href="/lembaga/lpmd">LPMD</a>
+            <a class="{{ Request::is('lembaga/poskesdes') ? 'active' : '' }} cus" href="/lembaga/posyandu">Posyandu</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -22,12 +27,17 @@
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu">
-        <a class="{{ Request::is('berita') ? 'active' : '' }}" href="/berita" onclick="closeMobileMenu()">Berita</a>
-        <a class="{{ Request::is('umkm') ? 'active' : '' }}" href="/umkm" onclick="closeMobileMenu()">UMKM</a>
-        <a class="{{ Request::is('kepengurusan') ? 'active' : '' }}" href="/kepengurusan" onclick="closeMobileMenu()">Kepengurusan</a>
-        <a class="{{ Request::is('apbd') ? 'active' : '' }}" href="/apbd" onclick="closeMobileMenu()">APBD</a>
-        <a class="{{ Request::is('lembaga') ? 'active' : '' }}" href="/lembaga" onclick="openLembaga()">Lembaga Desa</a>
-        <a class="{{ Request::is('kesenian') ? 'active' : '' }}" href="/kesenian" onclick="closeMobileMenu()">Kesenian</a>
+            <a class="{{ Request::is('berita') ? 'active' : '' }} def" href="/berita">Berita</a>
+            <a class="{{ Request::is('umkm') ? 'active' : '' }} def" href="/umkm">UMKM</a>
+            <a class="{{ Request::is('kepengurusan') ? 'active' : '' }} def" href="/kepengurusan">Kepengurusan</a>
+            <a class="{{ Request::is('apbd') ? 'active' : '' }} def" href="/apbd">APBD</a>
+            <a class="def" onclick="test()">Lembaga Desa</a>
+            <a class="{{ Request::is('kesenian') ? 'active' : '' }} def" href="/kesenian">Kesenian</a>
+            <a class="cus" onclick="test()" style="color: #777777">&lt; Kembali&nbsp;&nbsp;&nbsp;</a>
+            <a class="{{ Request::is('lembaga/bpd') ? 'active' : '' }} cus" href="/lembaga/bpd">BPD</a>
+            <a class="{{ Request::is('lembaga/pkk') ? 'active' : '' }} cus" href="/lembaga/pkk">PKK</a>
+            <a class="{{ Request::is('lembaga/karang-taruna') ? 'active' : '' }} cus" href="/lembaga/lpmd">LPMD</a>
+            <a class="{{ Request::is('lembaga/poskesdes') ? 'active' : '' }} cus" href="/lembaga/posyandu">Posyandu</a>
     </div>
 
     <script>
@@ -47,21 +57,37 @@
             menuBtn.classList.remove('active');
         }
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            const nav = document.querySelector('nav');
-            
-            if (!nav.contains(event.target) && mobileMenu.classList.contains('active')) {
-                closeMobileMenu();
-            }
-        });
-
         // Close mobile menu on window resize to desktop size
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
                 closeMobileMenu();
             }
         });
+        
+
+        let lembagaToggled = false;
+        function test() {
+            let cus = document.querySelectorAll('.cus');
+            let def = document.querySelectorAll('.def');
+            lembagaToggled = !lembagaToggled;
+            if (lembagaToggled) {
+            cus.forEach(el => {
+                el.style.display = 'inline';
+                el.style.opacity = '1';
+            });
+            def.forEach(el => {
+                el.style.display = 'none';
+                el.style.opacity = '0';
+            });
+            } else {
+            cus.forEach(el => {
+                el.style.display = 'none';
+                el.style.opacity = '0';
+            });
+            def.forEach(el => {
+                el.style.display = 'inline';
+                el.style.opacity = '1';
+            });
+            }
+        }
     </script>
