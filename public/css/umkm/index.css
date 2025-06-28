@@ -149,7 +149,7 @@
 
         .product-image {
             height: auto;
-            max-height: 300px;
+            max-height: 266px;
             width: 266px;
             object-fit: cover;
             flex-shrink: 0;

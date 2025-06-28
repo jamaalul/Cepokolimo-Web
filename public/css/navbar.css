@@ -11,7 +11,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 3;
 
     img {
         width: auto;
@@ -62,13 +62,13 @@ nav {
 
     &.active {
         span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
+            transform: rotate(-45deg) translate(-5.8px, 6.8px);
         }
         span:nth-child(2) {
             opacity: 0;
         }
         span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
+            transform: rotate(45deg) translate(-5.8px, -6.8px);
         }
     }
 }
@@ -83,7 +83,7 @@ nav {
     height: 100vh;
     background: #ffffffcb;
     backdrop-filter: blur(50px);
-    z-index: 1;
+    z-index: 2;
     flex-direction: column;
     justify-content: center;
     align-items: center;

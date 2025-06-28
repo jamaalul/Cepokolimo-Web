@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Agenda;
 use App\Models\News;
 use App\Models\UMKM;
+use App\Models\APBD;
 use Carbon\Carbon;
 
 class PagesController extends Controller
@@ -50,5 +51,15 @@ class PagesController extends Controller
 
     public function kepengurusan() {
         return view('kepengurusan');
+    }
+
+    public function kesenian() {
+        return view('kesenian');
+    }
+    public function apbd() 
+    {
+        $apbd = APBD::orderBy('tahun', 'desc')->take(6)->get();
+        
+        return view('apbd', compact('apbd'));
     }
 }

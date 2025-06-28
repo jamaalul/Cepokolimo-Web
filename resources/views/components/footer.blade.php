@@ -34,6 +34,7 @@
                         <ul>
                             <li><a href="/kepengurusan">Kepengurusan</a></li>
                             <li><a href="/lembaga">Lembaga Desa</a></li>
+                            <li><a href="/apbd">APBD</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
