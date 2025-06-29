@@ -34,10 +34,10 @@ class NewsResource extends Resource
                     ->required()
                     ->maxLength(128),
                 FileUpload::make('gambar')
-                    ->label('Gambar (Max 1MB)')
+                    ->label('Gambar (Maks 1MB)')
                     ->image()
                     ->required()
-                    ->maxSize(1024) // 1MB
+                    ->maxSize(4096) // 1MB
                     ->disk('public')
                     ->directory('news-images'),
                 RichEditor::make('body')

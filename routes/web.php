@@ -10,5 +10,5 @@ Route::get('/umkm', [PagesController::class, 'umkmIndex'])->name('umkm.index');
 Route::get('/umkm/{slug}', [PagesController::class, 'umkmShow'])->name('umkm.show');
 Route::get('/kepengurusan', [PagesController::class, 'kepengurusan'])->name('kepengurusan');
 Route::get('/apbd', [PagesController::class, 'apbd'])->name('apbd');
-Route::get('/lembaga', [PagesController::class, 'lembaga'])->name('lembaga');
+Route::get('/lembaga/{slug}', [PagesController::class, 'lembaga'])->name('lembaga');
 Route::get('/kesenian', [PagesController::class, 'kesenian'])->name('kesenian');

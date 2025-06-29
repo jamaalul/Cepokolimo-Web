@@ -127,37 +127,38 @@
 
       import { animate } from "https://cdn.jsdelivr.net/npm/motion@12.15.0/+esm"
 
-      const count = document.querySelector(".count1")
-
-      animate(0, 3708, {
+      // Error handler for missing stats data
+      @if (!isset($stats) || !$stats['total_penduduk'] || !$stats['produktif'] || !$stats['laki_laki'] || !$stats['perempuan'])
+         document.querySelectorAll('.stat-nums h3').forEach(el => el.innerHTML = 'N/A');
+      @else
+         const count = document.querySelector(".count1")
+         animate(0, {{ $stats['total_penduduk'] }}, {
          duration: 2,
          ease: "circOut",
          onUpdate: (latest) => (count.innerHTML = Math.round(latest)),
-      })
+         })
 
-      const count2 = document.querySelector(".count2")
-
-      animate(0, 76, {
+         const count2 = document.querySelector(".count2")
+         animate(0, {{ $stats['produktif']/$stats['total_penduduk']*100 }}, {
          duration: 2,
          ease: "circOut",
          onUpdate: (latest) => (count2.innerHTML = Math.round(latest)),
-      })
+         })
 
-      const count3 = document.querySelector(".count3")
-
-      animate(0, 54, {
+         const count3 = document.querySelector(".count3")
+         animate(0, {{ $stats['laki_laki']/$stats['total_penduduk']*100 }}, {
          duration: 2,
          ease: "circOut",
          onUpdate: (latest) => (count3.innerHTML = Math.round(latest)),
-      })
+         })
 
-      const count4 = document.querySelector(".count4")
-
-      animate(0, 46, {
+         const count4 = document.querySelector(".count4")
+         animate(0, {{ $stats['perempuan']/$stats['total_penduduk']*100 }}, {
          duration: 2,
          ease: "circOut",
          onUpdate: (latest) => (count4.innerHTML = Math.round(latest)),
-      })
+         })
+      @endif
    </script>
 </body>
 </html>

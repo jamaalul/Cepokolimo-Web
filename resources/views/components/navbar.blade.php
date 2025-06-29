@@ -14,7 +14,7 @@
             <a class="{{ Request::is('lembaga/bpd') ? 'active' : '' }} cus" href="/lembaga/bpd">BPD</a>
             <a class="{{ Request::is('lembaga/pkk') ? 'active' : '' }} cus" href="/lembaga/pkk">PKK</a>
             <a class="{{ Request::is('lembaga/karang-taruna') ? 'active' : '' }} cus" href="/lembaga/lpmd">LPMD</a>
-            <a class="{{ Request::is('lembaga/poskesdes') ? 'active' : '' }} cus" href="/lembaga/posyandu">Posyandu</a>
+            <a class="{{ Request::is('lembaga/poskesdes') ? 'active' : '' }} cus" href="/lembaga/poskesdes">Poskesdes</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -37,7 +37,7 @@
             <a class="{{ Request::is('lembaga/bpd') ? 'active' : '' }} cus" href="/lembaga/bpd">BPD</a>
             <a class="{{ Request::is('lembaga/pkk') ? 'active' : '' }} cus" href="/lembaga/pkk">PKK</a>
             <a class="{{ Request::is('lembaga/karang-taruna') ? 'active' : '' }} cus" href="/lembaga/lpmd">LPMD</a>
-            <a class="{{ Request::is('lembaga/poskesdes') ? 'active' : '' }} cus" href="/lembaga/posyandu">Posyandu</a>
+            <a class="{{ Request::is('lembaga/poskesdes') ? 'active' : '' }} cus" href="/lembaga/poskesdes">Poskesdes</a>
     </div>
 
     <script>
@@ -76,13 +76,13 @@
                 el.style.opacity = '1';
             });
             def.forEach(el => {
-                el.style.display = 'none';
                 el.style.opacity = '0';
+                el.style.display = 'none';
             });
             } else {
             cus.forEach(el => {
-                el.style.display = 'none';
                 el.style.opacity = '0';
+                el.style.display = 'none';
             });
             def.forEach(el => {
                 el.style.display = 'inline';

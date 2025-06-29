@@ -40,7 +40,7 @@ class UMKMResource extends Resource
                     ->required()
                     ->maxLength(48),
                 FileUpload::make('gambar')
-                    ->label('Gambar')
+                    ->label('Gambar (Maks 9 Gambar)')
                     ->image()
                     ->required()
                     ->disk('public')
