@@ -7,20 +7,21 @@
     <title>APBD | Cepokolimo</title>
     <link rel="stylesheet" href="{{ asset('css/apbd.css') }}">
     <link rel="stylesheet" href="{{ asset('css/global.css') }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     @include('components.navbar')
     <section class="hero">
         @if(isset($apbd) && count($apbd) > 0)
-            <h1>APB <b>Desa Cepokolimo</b> Tahun {{ $apbd[0]['tahun'] }}</h1>
+            <h1 data-aos="zoom-out-down" data-aos-duration="1000">APB <b>Desa Cepokolimo</b> Tahun {{ $apbd[0]['tahun'] }}</h1>
         @else
-            <h1>Data APBD tidak tersedia</h1>
+            <h1 data-aos="zoom-out-down" data-aos-duration="1000">Data APBD tidak tersedia</h1>
         @endif
     </section>
     <section class="apbd">
         @if(isset($apbd) && count($apbd) > 0)
             <div class="inout">
-                <div class="in flow">
+                <div class="in flow" data-aos="fade-up" data-aos-duration="1000">
                     <h3>&uArr; Pendapatan</h3>
                     <div class="amount">
                         @php
@@ -36,7 +37,7 @@
                         <strong>Rp{{ number_format($apbd[0]['pendapatan'], 0, ',', '.') }}</strong>
                     </div>
                 </div>
-                <div class="out flow">
+                <div class="out flow" data-aos="fade-up" data-aos-duration="1000">
                     <h3>&dArr; Belanja</h3>
                     <div class="amount">
                         @php
@@ -53,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            <div class="balance">
+            <div class="balance" data-aos="fade-up" data-aos-duration="1000">
                 <h3 class="surplus">Keseimbangan Anggaran</h3>
                 @if ($apbd[0]['pendapatan'] > $apbd[0]['belanja'])
                     <strong>Surplus sebesar Rp{{ number_format($apbd[0]['pendapatan'] - $apbd[0]['belanja'], 0, ',', '.') }}</strong>
@@ -62,12 +63,12 @@
                 @endif
             </div>
         @else
-            <div class="no-data">
+            <div class="no-data" data-aos="fade-up" data-aos-duration="1000">
                 <p>Data APBD tidak tersedia untuk ditampilkan.</p>
             </div>
         @endif
         @if(isset($apbd) && count($apbd) > 1)
-        <div class="prevapbd balance">
+        <div class="prevapbd balance" data-aos="fade-up" data-aos-duration="1000">
             <h3>Riwayat APBD</h3>
             <div class="record spc">
             <p>Tahun</p>
@@ -83,7 +84,7 @@
             @endfor
         </div>
         @else
-        <div class="prevapbd balance">
+        <div class="prevapbd balance" data-aos="fade-up" data-aos-duration="1000">
             <h3>Riwayat APBD</h3>
             <div class="no-data">
             <p>Data riwayat APBD tidak tersedia.</p>
@@ -93,5 +94,10 @@
         </div>
     </section>
     @include('components.footer')
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module">
+      AOS.init();
+    </script>
 </body>
 </html>

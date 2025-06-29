@@ -149,8 +149,8 @@
 
         .product-image {
             height: auto;
-            max-height: 266px;
-            width: 266px;
+            height: clamp(120px, 30vh, 200px);
+            aspect-ratio: 1 / 1;
             object-fit: cover;
             flex-shrink: 0;
             background-color: #b9b9b9;
@@ -163,6 +163,7 @@
             flex-direction: column;
             justify-content: space-between;
             gap: 1rem;
+            height: clamp(120px, 30vh, 200px);
         }
 
         .product-title {
