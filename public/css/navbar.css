@@ -91,6 +91,7 @@ nav {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding-top: 80px;
 
     &.active {
         opacity: 1;
@@ -112,11 +113,11 @@ nav {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     nav {
-        padding: 0.7rem 1.5rem;
+        padding: 0.5rem 0.8rem;
         aspect-ratio: auto;
-        height: 70px;
+        height: 80px;
     }
 
     body {
@@ -144,7 +145,7 @@ nav {
 
 @media (max-width: 480px) {
     nav {
-        padding: 0.7rem 1rem;
+        padding: 0.5rem 0.8rem;
     }
 
     .mobile-menu {
@@ -155,9 +156,9 @@ nav {
 }
 
 /* Tablet adjustments */
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 1024px) and (min-width: 900px) {
     nav {
-        padding: 0.7rem 2rem;
+        padding: 0.5rem 0.8rem;
     }
 
     .nav-links {

@@ -13,17 +13,23 @@
    @include('components.navbar')
    <section class="hero">
       <div class="header">
-         @if ($newest)
+         <div class="newest" data-aos="fade-left" data-aos-duration="1500">
+    <br>
+    <h3 style="font-size: 3vw; width: 100%; text-align: center; font-family: 'Inknut Antiqua', serif; margin: 0; line-height: 5vw; color: #fff;">Selamat Datang di<br>Desa Cepokolimo</h3>
+    <br>
+</div>
+         {{-- @if ($newest)
             <div class="newest" data-aos="fade-left" data-aos-duration="1500">
                <p>{{ $newest['tanggal']->translatedFormat('j F Y') }}</p>
                <h3>{{ $newest['judul'] }}</h3>
                <button onclick="window.location.href='berita/{{ $newest['slug'] }}'">Baca lebih lanjut</button>
             </div>
          @else
-            {{-- <div class="newest no-news" data-aos="fade-left" data-aos-duration="1500">
+            <div class="newest no-news" data-aos="fade-left" data-aos-duration="1500">
                <p>Tidak ada berita terbaru saat ini.</p>
-            </div> --}}
-         @endif
+            </div>
+         @endif --}}
+         
       </div>
       <div class="stats">
          <div class="stat-nums">
@@ -111,7 +117,7 @@
          @endif
       </div>
    </section>
-   <section class="cta" data-aos="fade-up" data-aos-duration="1500">
+   <section class="cta" data-aos="fade-up" data-aos-duration="1000">
         <div class="content">
             <h1>Ingin berkolaborasi dengan<br><b>Desa Cepokolimo</b> ?</h1>
             <p>Kami selalu terbuka untuk kerjasama positif dari luar. Baik untuk riset, kegiatan sosial, pelatihan, atau event lainnya. Mari bersama berdayakan desa dan masyarakat.</p>

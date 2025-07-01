@@ -49,10 +49,10 @@
                 <!-- Social & Newsletter Section -->
                 <div class="footer-social">
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        {{-- <a href="#" class="social-link" aria-label="Facebook">f</a>
                         <a href="#" class="social-link" aria-label="Twitter">t</a>
                         <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-                        <a href="#" class="social-link" aria-label="Instagram">ig</a>
+                        <a href="#" class="social-link" aria-label="Instagram">ig</a> --}}
                     </div>
                     <div class="newsletter">
                         <h3>Kontak</h3>
@@ -66,7 +66,7 @@
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <div class="footer-copyright">
-                    © 2025 Desa Cepokolimo. All rights reserved.
+                    © 2025 Selaras Web Development. All rights reserved.
                 </div>
                 {{-- <div class="footer-legal">
                     <a href="#privacy">Privacy Policy</a>

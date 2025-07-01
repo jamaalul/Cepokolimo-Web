@@ -4,6 +4,7 @@
         
         <!-- Desktop Navigation Links -->
         <div class="nav-links">
+            <a class="{{ Request::is('/') ? 'active' : '' }} def" href="/">Beranda</a>
             <a class="{{ Request::is('berita') ? 'active' : '' }} def" href="/berita">Berita</a>
             <a class="{{ Request::is('umkm') ? 'active' : '' }} def" href="/umkm">UMKM</a>
             <a class="{{ Request::is('kepengurusan') ? 'active' : '' }} def" href="/kepengurusan">Kepengurusan</a>
@@ -27,6 +28,7 @@
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu">
+            <a class="{{ Request::is('/') ? 'active' : '' }} def" href="/">Beranda</a>
             <a class="{{ Request::is('berita') ? 'active' : '' }} def" href="/berita">Berita</a>
             <a class="{{ Request::is('umkm') ? 'active' : '' }} def" href="/umkm">UMKM</a>
             <a class="{{ Request::is('kepengurusan') ? 'active' : '' }} def" href="/kepengurusan">Kepengurusan</a>
